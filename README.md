@@ -61,3 +61,16 @@ Optional parameters are:
 - <b>mu</b> to change the number of users the pathway is computed for (default: 10)
 - <b>ddir</b> to choose the directory wherein the dataset is contained (default: current directory)
 - <b>sdir</b> to choose the directory wherein the scripts are contained (default: current directory)
+
+The following is an example of an output: <br/>
+``
+Job sequence of user 50613: ['Line Production Operator', 'Part-Time Package Handler', 'RAN -Transmission Engineer / Site Supervisor, Bharti Airtel Project', 'IB-TI / Site Supervisor, Bharti Airtel Project', 'CTO, Airtel Project and Tigo Milicom Congo Project', 'IB-TI / Site Supervisor, Bahrti Airtel and Tigo Milicom Congo Project', 'Site Inspector, Tigo Milicom Congo Project', 'Driver / Responsible of automotive', 'Data Entry Operator', 'Security Officer']
+``
+<br/>
+``
+Pathway of user 50613: [0,25,25,25,0,0,0,15,0]
+``
+<br/>
+``
+Recommended pathway to user 50613: [0]
+``
