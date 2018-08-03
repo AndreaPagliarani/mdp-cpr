@@ -128,10 +128,10 @@ def compute_pathway_for_user(params, debug=True):
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("-uid", "--user_id", type=int, help="the user ID the pathway will be computed for (default None); if None, max_user users will be displayed")
-parser.add_argument("-mu", "--max_user", type=int, help="the maximum number of users to be shown (default 10)")
-parser.add_argument("-ddir", "--dataset_dir", type=str, help="the dataset path (default current folder)")
-parser.add_argument("-sdir", "--script_dir", type=str, help="the script directory (default current folder)")
+parser.add_argument("-uid", "--user_id", type=int, help="the user ID the pathway will be computed for (default: None); if None, max_user users will be displayed")
+parser.add_argument("-mu", "--max_user", type=int, help="the maximum number of users to be shown (default: 10)")
+parser.add_argument("-ddir", "--dataset_dir", type=str, help="the dataset path (default: current folder)")
+parser.add_argument("-sdir", "--script_dir", type=str, help="the script directory (default: current folder)")
 
 import time
 import pandas as pd

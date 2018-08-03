@@ -86,7 +86,7 @@ def evaluate_metrics(pathways, debug):
     metrics = {}
     metrics['CareerGoalReached'], metrics['ShorterRecommendedPath'], metrics['UserPathAvgLength'], metrics['RecPathAvgLength'] = metric_path_length(pathways)
     __print_msg('Career goal reached: {}'.format(metrics['CareerGoalReached']), debug)
-    __print_msg('Recommended path length: {}'.format(metrics['ShorterRecommendedPath']), debug)
+    __print_msg('Recommended path shorter: {}'.format(metrics['ShorterRecommendedPath']), debug)
     __print_msg('User pathway average length: {}'.format(metrics['UserPathAvgLength']), debug)
     __print_msg('Recommended pathway average length: {}'.format(metrics['RecPathAvgLength']), debug)
 
@@ -145,12 +145,12 @@ def run_single_exp(params, debug=True):
 
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument("-jpf", "--job_postings_fraction", type=float, help="the fraction of job postings used to learn a text representation as well as to build a job graph (default 0.01)")
-parser.add_argument("-nc", "--num_clusters", type=int, help="the number of clusters used to group job postings as well as the number of job graph states (default 20)")
-parser.add_argument("-spc", "--skills_per_cluster", type=int, help="the number of representative terms for each cluster (default 100)")
-parser.add_argument("-muh", "--min_user_hops", type=int, help="the minimum number of career hops for an user (default 10)")
-parser.add_argument("-ddir", "--dataset_dir", type=str, help="the dataset path (default current folder)")
-parser.add_argument("-sdir", "--script_dir", type=str, help="the script directory (default current folder)")
+parser.add_argument("-jpf", "--job_postings_fraction", type=float, help="the fraction of job postings used to learn a text representation as well as to build a job graph (default: 0.01)")
+parser.add_argument("-nc", "--num_clusters", type=int, help="the number of clusters used to group job postings as well as the number of job graph states (default: 40)")
+parser.add_argument("-spc", "--skills_per_cluster", type=int, help="the number of representative terms for each cluster (default: 100)")
+parser.add_argument("-muh", "--min_user_hops", type=int, help="the minimum number of career hops for an user (default: 10)")
+parser.add_argument("-ddir", "--dataset_dir", type=str, help="the dataset path (default: current folder)")
+parser.add_argument("-sdir", "--script_dir", type=str, help="the script directory (default: current folder)")
 
 import time
 import pandas as pd
@@ -160,7 +160,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     params = {}
     params['job_postings_fraction'] = args.job_postings_fraction if args.job_postings_fraction else 0.01
-    params['num_clusters'] = args.num_clusters if args.num_clusters else 20
+    params['num_clusters'] = args.num_clusters if args.num_clusters else 40
     params['skills_per_cluster'] = args.skills_per_cluster if args.skills_per_cluster else 100
     params['min_user_hops'] = args.min_user_hops if args.min_user_hops else 10
     params['dataset_dir'] = args.dataset_dir if args.dataset_dir else os.path.dirname(os.path.realpath(__file__))
